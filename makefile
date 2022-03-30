@@ -5,7 +5,7 @@ main.o: main.cpp
 	g++ -std=c++11 -c main.cpp
 
 Money.o: Money.cpp Money.h
-	g++ -std=c++11 -c FileGenerator.cpp
+	g++ -std=c++11 -c Money.cpp
 
 account.o: account.cpp account.h
 	g++ -std=c++11 -c account.cpp

@@ -3,7 +3,7 @@
 #include "account.h"
 
 Account::Account(const Money& obj){
-	Money.push_back(obj);
+	money.push_back(obj);
 	
 	/*if(deposit[l] < deposit[obj]){
 		money[obj] = money[obj] + deposit[obj]
@@ -18,16 +18,21 @@ void Account::makeDeposit(const Money& obj){
 	numDeposit++;
 	//Money& l(0,0);
 	//deposit.push_back(l);
+
+	//balUpdated = false;
 }
 
-void Account::makeWithdrawls(const Money& obj){
+void Account::makeWithdrawals(const Money& obj){
 	withdraw.push_back(obj);
-	numwithdraw++;
+	numWithdraw++;
 	//Money& l(0,0);
 	//withdraw.push_back(l);
+
+	//balUpdated = false;
 }
 
 void Account::checkBal(){
+
 	for(i=0;numDeposit != i; i++){
 		money[0] = money [0] + deposit[i];
 	}
