@@ -1,7 +1,7 @@
 /*Created by Andrew Ingram*/
 
 #include "Money.h"
-#include "Accout.h"
+#include "account.h"
 
 int main() {
 
