@@ -27,19 +27,23 @@ public:
 	
 	friend std::ostream &operator<<(std::ostream &os, const Account &account)
 	{
+		
 		if (account.numDeposit != 0 || account.numWithdraw != 0){
 			checkBal();
 		}
+		
 		os << "Account Details" << std::endl
 		<< "--------------------------" << std::endl
 		<< "Current Balance: " << account.money[0] << std::endl
 		<< "--------------------------" << std::endl
 		<< "Number of Deposits:"<<account.numDeposit << std::endl
 		<<"-------------------"<< std::endl;
+
 		for (int i=0; i<account.numDeposit; i++)
 		{
 			os << "(" << i+1 << ")" << account.deposit[i] << std::endl;
 		}
+
 		os << "-------------------------" << std::endl 
 		<< "Number of withdrawls: "<< account.numWithdraw << std::endl
 		<< "-------------------------" << std::endl;
