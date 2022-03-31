@@ -1,3 +1,8 @@
+/*
+Created by: Helen Truong
+Collaborated on by: Andrew Ingram
+*/
+
 #include "Money.h"
 
 Money::Money(int dollars, int cents):m_dollars(dollars),m_cents(cents)

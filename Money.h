@@ -1,3 +1,8 @@
+/*
+Created by: Helen Truong
+Collaborated on by: Andrew Ingram
+*/
+
 #ifndef MONEY_H
 #define MONEY_H
 

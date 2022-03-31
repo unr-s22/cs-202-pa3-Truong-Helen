@@ -1,14 +1,14 @@
-pa3: main.o Money.o account.o
-	g++ -std=c++11 -o pa3 main.o Money.o account.o
+pa3: Main.o Money.o Account.o
+	g++ -std=c++11 -o pa3 Main.o Money.o Account.o
 
-main.o: main.cpp
-	g++ -std=c++11 -c main.cpp
+Main.o: Main.cpp
+	g++ -std=c++11 -c Main.cpp
 
 Money.o: Money.cpp Money.h
 	g++ -std=c++11 -c Money.cpp
 
-account.o: account.cpp account.h
-	g++ -std=c++11 -c account.cpp
+Account.o: Account.cpp Account.h
+	g++ -std=c++11 -c Account.cpp
 
 clean:
 	rm -f pa3 *.o

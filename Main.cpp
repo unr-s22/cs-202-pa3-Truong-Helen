@@ -4,7 +4,7 @@ Collaborated on by: Helen Truong
 */
 
 #include "Money.h"
-#include "account.h"
+#include "Account.h"
 
 int main() {
 

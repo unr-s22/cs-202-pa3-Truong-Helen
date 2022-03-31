@@ -1,6 +1,9 @@
-/* Created by: Andrew Ingram*/
+/*
+Created by: Andrew Ingram
+Collaborated on by: Helen Truong
+*/
 
-#include "account.h"
+#include "Account.h"
 
 Account::Account(const Money& obj){
 	money.push_back(obj);
@@ -79,7 +82,7 @@ void Account::checkBal()
 	for(i=0; numDeposit != i; i++){
 		money.at(0) = (money.at(0) + deposit.at(i));
 	}
-	//numDeposit = 0;s
+	//numDeposit = 0;
 	
 	for (i=0; numWithdraw != i; i++){
 		money.at(0) = money.at(0) - withdraw.at(i);

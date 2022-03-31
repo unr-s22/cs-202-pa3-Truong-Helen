@@ -1,4 +1,7 @@
-/*Created by: Andrew Ingram*/
+/*
+Created by: Andrew Ingram
+Collaborated on by: Helen Truong
+*/
 
 #ifndef CODE_ACCOUNT_H
 #define CODE_ACCOUNT_H
