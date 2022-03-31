@@ -7,23 +7,12 @@ Collaborated on by: Helen Truong
 
 Account::Account(const Money& obj){
 	money.push_back(obj);
-	
-	/*if(deposit[l] < deposit[obj]){
-		money[obj] = money[obj] + deposit[obj]
-		deposit[obj] = 0;
-		numDeposit = 0;
-	}*/
-	
+
 }
 
 void Account::makeDeposit(const Money& obj){
 	deposit.push_back(obj);
 	numDeposit++;
-
-	//money.at(0) = money.at(0) + obj;
-
-	//Money& l(0,0);
-	//deposit.push_back(l);
 
 	balUpdated = false;
 }
@@ -32,28 +21,29 @@ void Account::makeWithdrawals(const Money& obj){
 	withdraw.push_back(obj);
 	numWithdraw++;
 
-	//money.at(0) = money.at(0) - obj;
-	//Money& l(0,0);
-	//withdraw.push_back(l);
-
 	balUpdated = false;
 }
 
 std::ostream &operator<<(std::ostream &os, const Account &account)
 {
-	/*
-	if (account.numDeposit != 0 || account.numWithdraw != 0){
-		checkBal();
-	}
-	*/
+
+	Money n((account.money[0].getDollars()), (account.money[0].getCents()));
 	if (account.balUpdated == false)
 	{
-		account.checkBal();
+		for(int i=0; account.numDeposit != i; i++)
+		{
+			n = n + (account.deposit[i]);
+		}
+
+		for (int i=0; account.numWithdraw != i; i++)
+		{
+			n = n - (account.withdraw[i]);
+		}
 	}
 
 	os << "Account Details" << std::endl
 	<< "--------------------------" << std::endl
-	<< "Current Balance: " <<  account.money[0] << std::endl
+	<< "Current Balance: " <<  n << std::endl
 	<< "--------------------------" << std::endl
 	<< "Number of Deposits: "<< account.numDeposit << std::endl
 	<<"-------------------"<< std::endl;
@@ -73,19 +63,4 @@ std::ostream &operator<<(std::ostream &os, const Account &account)
 	}
 	
 	return os;
-}
-
-
-void Account::checkBal()
-{
-
-	for(i=0; numDeposit != i; i++){
-		money.at(0) = (money.at(0) + deposit.at(i));
-	}
-	//numDeposit = 0;
-	
-	for (i=0; numWithdraw != i; i++){
-		money.at(0) = money.at(0) - withdraw.at(i);
-	}
-	//numWithdraw = 0;
 }

@@ -90,11 +90,13 @@ bool Money::operator==(const Money& money)
 
 Money Money::operator+(const Money& money) const
 {
-    //int dollars = m_dollars + money.getDollars();
-    //int cents = m_cents + money.getCents();
-
     int dollars = m_dollars + money.getDollars();
     int cents = m_cents + money.getCents();
+    if (cents >= 100)
+    {
+        dollars++;
+        cents -= 100;
+    }
 
     return Money(dollars, cents);
 }
@@ -103,6 +105,12 @@ Money Money::operator-(const Money& money) const
 {
     int dollars = m_dollars - money.getDollars();
     int cents = m_cents - money.getCents();
+    if (cents < 0)
+    {
+        dollars--;
+        cents += 100;
+    }
+
 
     return Money(dollars, cents);
 }
