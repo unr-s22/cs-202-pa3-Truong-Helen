@@ -83,15 +83,18 @@ bool Money::operator==(const Money& money)
     return ((m_dollars == money.getDollars()) && (m_cents == money.getCents()));
 }
 
-Money Money::operator+(const Money& money)
+Money Money::operator+(const Money& money) const
 {
+    //int dollars = m_dollars + money.getDollars();
+    //int cents = m_cents + money.getCents();
+
     int dollars = m_dollars + money.getDollars();
     int cents = m_cents + money.getCents();
 
     return Money(dollars, cents);
 }
 
-Money Money::operator-(const Money& money)
+Money Money::operator-(const Money& money) const
 {
     int dollars = m_dollars - money.getDollars();
     int cents = m_cents - money.getCents();
@@ -101,7 +104,7 @@ Money Money::operator-(const Money& money)
 
 std::ostream &operator<<(std::ostream &out, const Money &money)
 {
-   out << "$" << money.getDollars() << money.getCents() << std::endl;
+   out << "$" << money.getDollars() << "." << money.getCents();
    return out;
 }
 
@@ -113,4 +116,14 @@ int Money::getDollars() const
 int Money::getCents() const
 {
     return m_cents;
+}
+
+void Money::setDollars(int dollars)
+{
+    m_dollars = dollars;
+}
+
+void Money::setCents(int cents)
+{
+    m_cents = cents;
 }

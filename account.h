@@ -14,7 +14,7 @@ class Account : public Money
 	std::vector<Money> deposit;
 	int numDeposit = 0;
 	int numWithdraw = 0;
-	//int balUpdated = true;
+	int balUpdated = true;
 	int i = 0;
 	
 	
@@ -25,18 +25,24 @@ public:
 	void checkBal();
 	
 	
-	friend std::ostream &operator<<(std::ostream &os, const Account &account)
-	{
+	friend std::ostream &operator<<(std::ostream &os, const Account &account);
+	/*{
 		
 		if (account.numDeposit != 0 || account.numWithdraw != 0){
 			checkBal();
 		}
 		
+
+		if (account.balUpdated == false)
+		{
+
+		}
+
 		os << "Account Details" << std::endl
 		<< "--------------------------" << std::endl
-		<< "Current Balance: " << account.money[0] << std::endl
+		<< "Current Balance: " <<  account.money[0] << std::endl
 		<< "--------------------------" << std::endl
-		<< "Number of Deposits:"<<account.numDeposit << std::endl
+		<< "Number of Deposits: "<< account.numDeposit << std::endl
 		<<"-------------------"<< std::endl;
 
 		for (int i=0; i<account.numDeposit; i++)
@@ -45,7 +51,7 @@ public:
 		}
 
 		os << "-------------------------" << std::endl 
-		<< "Number of withdrawls: "<< account.numWithdraw << std::endl
+		<< "Number of Withdrawls: " << account.numWithdraw << std::endl
 		<< "-------------------------" << std::endl;
 		
 		for (int i=0; i<account.numWithdraw; i++)
@@ -54,7 +60,7 @@ public:
 		}
 		
 		return os;
-	}
+	}*/
 };
 
 #endif //CODE_ACCOUNT_H

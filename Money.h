@@ -18,12 +18,14 @@ public:
     bool operator>=(const Money& money);
     bool operator!=(const Money& money);
     bool operator==(const Money& money);
-    Money operator+(const Money& money);
-    Money operator-(const Money& money);
+    Money operator+(const Money& money) const;
+    Money operator-(const Money& money) const;
     friend std::ostream &operator<<(std::ostream &out, const Money &money);
 
     int getDollars() const;
     int getCents() const;
+    void setDollars(int dollars);
+    void setCents(int cents);
 
 };
 
